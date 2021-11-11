@@ -24,8 +24,8 @@ spec:
         io.kompose.service: users
     spec:
       containers:
-        - image: gcr.io/cs3219-team23-328712/users:latest
-          imagePullPolicy: Always
+        - image: users-image
+          imagePullPolicy: Never
           name: users
           ports:
             - containerPort: 5001

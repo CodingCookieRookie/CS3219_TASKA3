@@ -1,7 +1,5 @@
 // Import express
 let express = require('express');
-// Import Mongoose
-let mongoose = require('mongoose');
 
 let cors = require('cors');
 
@@ -21,17 +19,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-// Connect to Mongoose and set connection variable
-const uri = "mongodb://localhost/matches"
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-var db = mongoose.connection
-
-// Added check for DB connection
-if(!db) {
-    console.log("Error connecting db")
-}
-else
-    console.log("Db connected successfully")
 
 // Setup server port
 var port = 5001;

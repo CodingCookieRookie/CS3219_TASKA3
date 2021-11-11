@@ -17,4 +17,4 @@ spec:
     io.kompose.service: users
   type: ClusterIP
 # status:
-#   NodePort: {}
+#   LoadBalancer: {}

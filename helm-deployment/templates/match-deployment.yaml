@@ -24,8 +24,8 @@ spec:
         io.kompose.service: match
     spec:
       containers:
-        - image: gcr.io/cs3219-team23-328712/match:latest
-          imagePullPolicy: Always
+        - image: match-image
+          imagePullPolicy: Never
           name: match
           ports:
             - containerPort: 5004

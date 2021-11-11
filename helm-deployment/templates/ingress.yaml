@@ -1,23 +1,36 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-test
+  name: ingress
   annotations:
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/session-cookie-name: "route"
     nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
     nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
-
 spec:
   ingressClassName: nginx
-  rules:
-  - host: stickyingress.example.com
+  rules:   
+  - host: localhost
     http:
       paths:
       - path: /
-        pathType: Prefix
+        pathType: ImplementationSpecific        
         backend:
           service:
-            name: http-svc
+            name: nginx
             port: 
               number: 80
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: users
+            port: 
+              number: 5001  
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: match
+            port: 
+              number: 5004
