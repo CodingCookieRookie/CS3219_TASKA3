@@ -19,5 +19,18 @@ spec:
               port: 
                 number: 80
           pathType: Prefix
-             
+        - path: /
+          backend:
+            service:
+              name: users
+              port: 
+                number: 5001
+          pathType: Prefix 
+        - path: /
+          backend:
+            service:
+              name: match
+              port: 
+                number: 5004
+          pathType: Prefix                   
           
