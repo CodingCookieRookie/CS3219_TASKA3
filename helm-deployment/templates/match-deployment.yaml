@@ -28,7 +28,7 @@ spec:
           imagePullPolicy: Never
           name: match
           ports:
-            - containerPort: 5004
+            - containerPort: 5010
           resources:
             requests:
               cpu: "25m"

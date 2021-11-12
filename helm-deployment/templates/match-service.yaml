@@ -10,9 +10,9 @@ metadata:
   name: match
 spec:
   ports:
-    - name: "5004"
-      port: 5004
-      targetPort: 5004
+    - name: "5010"
+      port: 5010
+      targetPort: 5010
   selector:
     io.kompose.service: match
   type: ClusterIP

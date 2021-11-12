@@ -8,29 +8,16 @@ metadata:
     nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
     nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
 spec:
-  ingressClassName: nginx
-  rules:   
+  rules:
   - host: localhost
     http:
       paths:
-      - path: /
-        pathType: ImplementationSpecific        
-        backend:
-          service:
-            name: nginx
-            port: 
-              number: 80
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: users
-            port: 
-              number: 5001  
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: match
-            port: 
-              number: 5004
+        - path: /
+          backend:
+            service:
+              name: nginx
+              port: 
+                number: 80
+          pathType: Prefix
+             
+          
